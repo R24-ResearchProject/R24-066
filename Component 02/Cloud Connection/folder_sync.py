@@ -1,9 +1,9 @@
 import time
-import boto3
+import boto3 #interacting with s3
 from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
+from watchdog.events import FileSystemEventHandler #monitoring file system events
 
-local_folder = 'D:\\SLIIT\\test'
+local_folder = 'D:\\SLIIT\\test3'
 s3_bucket_name = 'testminindu'
 
 s3 = boto3.client('s3')
