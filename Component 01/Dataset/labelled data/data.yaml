@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['non defect', 'open seam']
+
+roboflow:
+  workspace: object-detection-glyci
+  project: new-defects-or-not
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/object-detection-glyci/new-defects-or-not/1
