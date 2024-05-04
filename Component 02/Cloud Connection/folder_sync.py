@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 local_folder = 'D:\\SLIIT\\test3'
 
 # S3 bucket name
-s3_bucket_name = 'testminindu'
+s3_bucket_name = 'testminindu2'
 
 # Initialize S3 client
 s3 = boto3.client('s3')
@@ -32,7 +32,7 @@ class S3SyncHandler(FileSystemEventHandler):
                 s3_key = os.path.join(os.path.basename(local_folder), relative_path)
                 s3.upload_file(file_path, s3_bucket_name, s3_key)
                 logger.info(f"Uploaded {file_path} to S3 bucket {s3_bucket_name} as {s3_key}")
-        except Exception as e:
+        except :
             logger.error(f" syncing {file_path} to S3")
 
 if __name__ == "__main__":
