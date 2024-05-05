@@ -10,8 +10,8 @@ const HeroContainer = () => {
       <Container fluid>
         <Row className="align-items-center"> {/* Vertically center content */}
           <Col className="text-center custom-frame">
-            <h1>MASS<br></br>Production Line Monitoring</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan euismod lorem, eget consectetur felis accumsan a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan euismod lorem, eget consectetur felis accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan euismod lorem, eget consectetur felis accumsan a.</p>
+            <h1>MAS<br></br>Production Quality Monitoring</h1>
+            <p>MAS Holdings is a Sri Lankan apparel manufacturer. The company was founded in 1987 by Mahesh, Sharad and Ajay Amalean. MAS Holdings began as an underwear manufacturer and later diversified into sportswear, performance wear and swimwear.</p>
             <div className="button-group">
               <button className="custom-button light mr-3" onClick={() => {
                 navigate('/map');

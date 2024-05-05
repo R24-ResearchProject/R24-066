@@ -51,7 +51,7 @@ const SignIn = () => {
     <div className="max-w-md mx-auto mt-8 p-6 rounded-md shadow-md container form-container">
       <div className='image-container text-center'>
               <img src={process.env.PUBLIC_URL+'/images/logo-em.png'} height={60} alt='background' />
-              <span className='custom-title'>MASS</span>
+              <span className='custom-title'>MAS</span>
       </div>
       <br/><br/>
       <h1 className="text-3xl font-semibold mb-6">Sign In</h1>
