@@ -18,3 +18,8 @@
 # Common additional formats
 *.svg
 *.ico
+
+# Excel and CSV files
+*.csv
+*.xlsx
+*.xls
