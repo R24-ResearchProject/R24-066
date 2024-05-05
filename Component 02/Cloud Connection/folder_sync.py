@@ -10,10 +10,10 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Local directory to monitor
-local_folder = 'D:\\SLIIT\\test3'
+local_folder = "D:\SLIIT\Research\Repo\Organization\R24-066\Component 02\Augmentation\ml\cloths"
 
 # S3 bucket name
-s3_bucket_name = 'testminindu2'
+s3_bucket_name = 'testminindu'
 
 # Initialize S3 client
 s3 = boto3.client('s3')
@@ -33,7 +33,7 @@ class S3SyncHandler(FileSystemEventHandler):
                 s3.upload_file(file_path, s3_bucket_name, s3_key)
                 logger.info(f"Uploaded {file_path} to S3 bucket {s3_bucket_name} as {s3_key}")
         except :
-            logger.error(f" syncing {file_path} to S3")
+            logger.info(f" syncing {file_path} to S3")
 
 if __name__ == "__main__":
     # Initialize observer
