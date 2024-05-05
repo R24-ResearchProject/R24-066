@@ -128,10 +128,10 @@ function ProgressTracking() {
               <Col lg={12}>
                 <Card className="shadow">
                   <Card.Header>
-                    <h1>Depects Tracking</h1>
+                    <h1>Defect Tracking</h1>
                   </Card.Header>
                   <Card.Body>
-                    <span><Link to={'/'}>Home</Link> / Depects Tracking</span>
+                    <span><Link to={'/'}>Home</Link> / Defect Tracking</span>
                   </Card.Body>
                 </Card>
               </Col>

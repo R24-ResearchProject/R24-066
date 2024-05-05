@@ -33,7 +33,7 @@ const SideNavBar = ({onToggle}) => {
           <NavIcon>
             <Link to={'/dashboard/progress'}><AiOutlineBarChart style={{ fontSize: "1.75em" }} /></Link>
           </NavIcon>
-          <NavText><Link to={'/dashboard/progress'}>Depects Tracking</Link></NavText>
+          <NavText><Link to={'/dashboard/progress'}>Defect Tracking</Link></NavText>
         </NavItem>
         <NavItem eventKey="issues">
           <NavIcon>

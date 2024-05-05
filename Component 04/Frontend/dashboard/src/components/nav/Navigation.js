@@ -38,7 +38,7 @@ function Navigation() {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo">
-          <img src={process.env.PUBLIC_URL +"/images/logo-em.png"} height={40}/> MASS
+          <img src={process.env.PUBLIC_URL +"/images/logo-em.png"} height={40}/> MAS
         </Link>
 
         {/* Mobile menu */}
