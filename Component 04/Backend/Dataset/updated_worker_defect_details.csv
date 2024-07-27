@@ -1,4 +1,4 @@
-Worker_ID,Date,Run_Off_D1,Open_Seam_D2,SPI_Errors_D3,High_Low_D4,Production_Volume,Shift,defect_count,count
+Worker_ID,Date,Run_Off,Open_Seam,SPI_Errors,High_Low,Production_Volume,Shift,defect_count,count
 W_00001,01/1/24,0,0,3,5,600,Morning,8,592
 W_00001,01/2/24,1,2,0,3,600,Morning,6,594
 W_00001,01/3/24,3,4,5,3,600,Morning,15,585
