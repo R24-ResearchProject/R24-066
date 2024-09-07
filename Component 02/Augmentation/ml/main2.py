@@ -2,11 +2,11 @@ import cv2
 import numpy as np
 import concurrent.futures
 import tensorflow as tf
-import os
 
 # Load the pre-trained models
 model_defects = tf.keras.models.load_model('D:\SLIIT\Research\Repo\Organization\R24-066\Component 02\Augmentation\model_defects2.h5')
 model_seam = tf.keras.models.load_model('D:\SLIIT\Research\Repo\Organization\R24-066\Component 02\Augmentation\model_cloth2.h5')
+
 
 # Define a dictionary to map defect type indices to names
 defect_type_mapping = {
@@ -63,37 +63,22 @@ def apply_filters(frame):
 
     return filtered_frame
 
-# Function to save the frame asynchronously
-def save_frame(frame, filename):
-    cv2.imwrite(filename, frame)
-
 # Function to process a single frame for both seam identification and defect prediction
-def process_frame(frame, output_folder):
+def process_frame(frame):
     if is_seam(frame):
         filtered_frame = apply_filters(frame)
         defect_type = process_frame_for_defect(filtered_frame)
         cv2.putText(filtered_frame, defect_type, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
-        
-        # Save the defect frame with its prediction
-        filename = os.path.join(output_folder, f"{defect_type}_{np.random.randint(1000)}.png")
-        
-        # Use threading to save the frame
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            executor.submit(save_frame, filtered_frame, filename)
-        
         return filtered_frame, True
     else:
         return frame, False
 
 # Function to process the video and apply the models with thread pooling
-def process_video(video_path, output_folder, max_workers=4, frame_width=720, frame_height=800):
+def process_video(video_path, max_workers=4, frame_width=720, frame_height=800):
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         print("Error: Could not open video file.")
         return
-
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
 
     while True:
         ret, frame = cap.read()
@@ -104,7 +89,7 @@ def process_video(video_path, output_folder, max_workers=4, frame_width=720, fra
 
         # Dynamic thread allocation and load balancing using ThreadPoolExecutor
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future = executor.submit(process_frame, resized_frame, output_folder)
+            future = executor.submit(process_frame, resized_frame)
             processed_frame, is_seam_frame = future.result()
 
         if is_seam_frame:
@@ -120,8 +105,7 @@ def process_video(video_path, output_folder, max_workers=4, frame_width=720, fra
     cv2.destroyAllWindows()
 
 # Path to the video file
-video_path = "Component 02\\videos\\test4.mp4"
-output_folder = "Component 02\\Augmentation\\ml\\Defect_Photos"
+video_path = "Component 02\\videos\\test video2.mp4"
 
 # Real-time processing considerations: process and display video frames
-process_video(video_path, output_folder)
+process_video(video_path)
