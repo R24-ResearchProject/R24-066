@@ -1,0 +1,9 @@
+# Create a virtual environment
+python3 -m venv path/to/venv
+
+# Activate the virtual environment
+source pkg/bin/activate
+source pkg-frontend/bin/activate
+
+# Install SQLAlchemy within the virtual environment
+pip install SQLAlchemy
