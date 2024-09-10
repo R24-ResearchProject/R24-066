@@ -105,7 +105,7 @@ def process_video(video_path, max_workers=4, frame_width=720, frame_height=800):
     cv2.destroyAllWindows()
 
 # Path to the video file
-video_path = "Component 02\\videos\\test video2.mp4"
+video_path = "Component 02\\videos\\test4.mp4"
 
 # Real-time processing considerations: process and display video frames
 process_video(video_path)
